@@ -91,25 +91,24 @@ namespace CustomMath
 
         public static Vec3 operator -(Vec3 leftV3, Vec3 rightV3)
         {
-            throw new NotImplementedException();
+            return new Vec3(leftV3.x - rightV3.x, leftV3.y - rightV3.y, leftV3.z - rightV3.z);
         }
-
         public static Vec3 operator -(Vec3 v3)
         {
-            throw new NotImplementedException();
+            return new Vec3(v3.x * -1, v3.y * -1, v3.y * -1);
         }
 
         public static Vec3 operator *(Vec3 v3, float scalar)
         {
-            throw new NotImplementedException();
+            return new Vec3(v3.x * scalar, v3.y * scalar, v3.z * scalar);
         }
         public static Vec3 operator *(float scalar, Vec3 v3)
         {
-            throw new NotImplementedException();
+            return new Vec3(v3.x * scalar, v3.y * scalar, v3.z * scalar);
         }
         public static Vec3 operator /(Vec3 v3, float scalar)
         {
-            throw new NotImplementedException();
+            return new Vec3(v3.x / scalar, v3.y / scalar, v3.z / scalar);
         }
 
         public static implicit operator Vector3(Vec3 v3)
@@ -119,7 +118,7 @@ namespace CustomMath
 
         public static implicit operator Vector2(Vec3 v2)
         {
-            throw new NotImplementedException();
+            return new Vector2(v2.x, v2.y);
         }
         #endregion
 
@@ -172,11 +171,11 @@ namespace CustomMath
         {
             throw new NotImplementedException();
         }
-        public static Vec3 Project(Vec3 vector, Vec3 onNormal) 
+        public static Vec3 Project(Vec3 vector, Vec3 onNormal)
         {
             throw new NotImplementedException();
         }
-        public static Vec3 Reflect(Vec3 inDirection, Vec3 inNormal) 
+        public static Vec3 Reflect(Vec3 inDirection, Vec3 inNormal)
         {
             throw new NotImplementedException();
         }
