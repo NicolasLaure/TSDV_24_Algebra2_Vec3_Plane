@@ -133,7 +133,15 @@ namespace CustomMath
         }
         public static Vec3 ClampMagnitude(Vec3 vector, float maxLength)
         {
-            throw new NotImplementedException();
+
+            if (vector.magnitude > maxLength)
+            {
+                vector.Normalize();
+                Debug.Log(vector.magnitude);
+                return vector * maxLength;
+            }
+
+            return vector;
         }
         public static float Magnitude(Vec3 vector)
         {
