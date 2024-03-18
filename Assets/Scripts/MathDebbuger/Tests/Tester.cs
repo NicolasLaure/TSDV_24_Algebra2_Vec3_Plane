@@ -5,6 +5,8 @@ using MathDebbuger;
 using CustomMath;
 public class Tester : MonoBehaviour
 {
+    Vec3 a;
+    Vec3 b;
     void Start()
     {
         List<Vector3> vectors = new List<Vector3>();
@@ -19,6 +21,8 @@ public class Tester : MonoBehaviour
         Vector3Debugger.AddVector(Vector3.down * 7, Color.green, "elVerde");
         Vector3Debugger.EnableEditorView("elVerde");
 
+        a = new Vec3(10, 2, 3);
+        b = new Vec3(5, 1, 7);
     }
 
     // Update is called once per frame
@@ -26,6 +30,9 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
+            Debug.Log(a.magnitude);
+            a = Vec3.ClampMagnitude(a, 2);
+            Debug.Log(a.magnitude);
         }
 
         if (Input.GetKeyDown(KeyCode.O))
