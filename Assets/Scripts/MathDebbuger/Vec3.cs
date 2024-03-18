@@ -201,7 +201,12 @@ namespace CustomMath
         }
         public void Normalize()
         {
-            throw new NotImplementedException();
+            float newX = x / magnitude;
+            float newY = y / magnitude;
+            float newZ = z / magnitude;
+            x = newX;
+            y = newY;
+            z = newZ;
         }
         #endregion
 
