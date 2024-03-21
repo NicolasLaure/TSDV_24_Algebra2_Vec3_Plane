@@ -145,7 +145,7 @@ namespace CustomMath
         }
         public static float Magnitude(Vec3 vector)
         {
-            throw new NotImplementedException();
+            return Mathf.Sqrt(vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
         }
         public static Vec3 Cross(Vec3 a, Vec3 b)
         {
@@ -153,7 +153,7 @@ namespace CustomMath
         }
         public static float Distance(Vec3 a, Vec3 b)
         {
-            throw new NotImplementedException();
+            return (a-b).magnitude;
         }
         public static float Dot(Vec3 a, Vec3 b)
         {
