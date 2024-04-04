@@ -22,7 +22,7 @@ public class Tester : MonoBehaviour
         Vector3Debugger.EnableEditorView("elVerde");
 
         a = new Vec3(10, 2, 3);
-        b = new Vec3(5, 1, 7);
+        b = new Vec3(5, 5, 7);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Vec3.Cross(a, b);
+            Vec3.Min(a, b);
         }
 
         if (Input.GetKeyDown(KeyCode.O))
