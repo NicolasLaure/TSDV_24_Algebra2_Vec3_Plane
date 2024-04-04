@@ -30,9 +30,7 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log(a.magnitude);
-            a = Vec3.ClampMagnitude(a, 2);
-            Debug.Log(a.magnitude);
+            Vec3.Cross(a, b);
         }
 
         if (Input.GetKeyDown(KeyCode.O))

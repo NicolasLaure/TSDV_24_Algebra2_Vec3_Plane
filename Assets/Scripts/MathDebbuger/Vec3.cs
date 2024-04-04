@@ -149,11 +149,18 @@ namespace CustomMath
         }
         public static Vec3 Cross(Vec3 a, Vec3 b)
         {
-            throw new NotImplementedException();
+            Vec3 normal;
+
+            normal.x = a.y * b.z - a.z * b.y;
+            // for the "y" axis, we change the order of substraction to invert the value (since x and z remain positive while y is negative due to matrix sign) 
+            normal.y = a.z * b.x - a.x * b.z;
+            normal.z = a.x * b.y - a.y * b.x;
+
+            return normal;
         }
         public static float Distance(Vec3 a, Vec3 b)
         {
-            return (a-b).magnitude;
+            return (a - b).magnitude;
         }
         public static float Dot(Vec3 a, Vec3 b)
         {
