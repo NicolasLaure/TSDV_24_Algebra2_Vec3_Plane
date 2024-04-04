@@ -184,7 +184,7 @@ namespace CustomMath
         }
         public static float SqrMagnitude(Vec3 vector)
         {
-            throw new NotImplementedException();
+            return (vector.x * vector.x + vector.y * vector.y + vector.z * vector.z);
         }
         public static Vec3 Project(Vec3 vector, Vec3 onNormal)
         {
