@@ -168,11 +168,13 @@ namespace CustomMath
         }
         public static Vec3 Lerp(Vec3 a, Vec3 b, float t)
         {
-            throw new NotImplementedException();
+            t = Mathf.Clamp(t, 0, 1);
+            // the first vector plus the distance of itself to the second vector multiplied by t (0 returns a, 1 returns b)
+            return a + (b - a) * t;
         }
         public static Vec3 LerpUnclamped(Vec3 a, Vec3 b, float t)
         {
-            throw new NotImplementedException();
+            return a + (b - a) * t;
         }
         public static Vec3 Max(Vec3 a, Vec3 b)
         {

@@ -30,7 +30,7 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Vec3.Min(a, b);
+            Debug.Log(Vec3.LerpUnclamped(a, b, 1.0f));
         }
 
         if (Input.GetKeyDown(KeyCode.O))
