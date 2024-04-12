@@ -21,8 +21,8 @@ public class Tester : MonoBehaviour
         Vector3Debugger.AddVector(Vector3.down * 7, Color.green, "elVerde");
         Vector3Debugger.EnableEditorView("elVerde");
 
-        a = new Vec3(10, 2, 3);
-        b = new Vec3(5, 5, 7);
+        a = new Vec3(10, 15, 3);
+        b = new Vec3(0.1f, 0, 0);
     }
 
     // Update is called once per frame
@@ -30,7 +30,8 @@ public class Tester : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log(Vec3.LerpUnclamped(a, b, 1.0f));
+            Debug.Log(Vector3.Project(a,b));
+            Debug.Log(Vec3.Project(a,b));
         }
 
         if (Input.GetKeyDown(KeyCode.O))

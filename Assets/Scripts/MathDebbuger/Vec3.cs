@@ -200,7 +200,13 @@ namespace CustomMath
         }
         public static Vec3 Project(Vec3 vector, Vec3 onNormal)
         {
-            throw new NotImplementedException();
+            if (onNormal.magnitude == 0)
+                return Vec3.Zero;
+
+            // https://www.geogebra.org/m/arPXpSet search why dotProduct(a,b) / b equals project
+            onNormal.Normalize();
+            onNormal *= (Dot(vector, onNormal) / Mathf.Sqrt(MathF.Pow(onNormal.x, 2) + MathF.Pow(onNormal.y, 2) + MathF.Pow(onNormal.z, 2)));
+            return onNormal;
         }
         public static Vec3 Reflect(Vec3 inDirection, Vec3 inNormal)
         {
