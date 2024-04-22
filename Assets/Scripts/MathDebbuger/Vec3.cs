@@ -77,6 +77,7 @@ namespace CustomMath
             float diff_y = left.y - right.y;
             float diff_z = left.z - right.z;
             float sqrmag = diff_x * diff_x + diff_y * diff_y + diff_z * diff_z;
+            //Checks if the difference between both vectors is close to zero
             return sqrmag < epsilon * epsilon;
         }
         public static bool operator !=(Vec3 left, Vec3 right)

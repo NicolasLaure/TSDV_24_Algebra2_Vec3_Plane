@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 1764039089}
   - component: {fileID: 1764039088}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EjerciciosLean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
