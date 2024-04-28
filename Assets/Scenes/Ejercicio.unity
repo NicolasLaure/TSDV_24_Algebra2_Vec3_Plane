@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764039089}
   - component: {fileID: 1764039088}
+  - component: {fileID: 1764039090}
   m_Layer: 0
   m_Name: EjerciciosLean
   m_TagString: Untagged
@@ -340,8 +341,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ejercicio: 0
   vectorColor: {r: 1, g: 0, b: 0, a: 1}
-  a: {x: 0, y: 0, z: 0}
-  b: {x: 0, y: 0, z: 0}
+  a: {x: 3, y: 1, z: 2}
+  b: {x: 2, y: 7, z: 3}
 --- !u!4 &1764039089
 Transform:
   m_ObjectHideFlags: 0
@@ -357,6 +358,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764039090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764039087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c7c9f6796eceb4fa7a824820f28e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedExercise: 0
+  VectorColor: {r: 1, g: 0, b: 0, a: 1}
+  A:
+    x: 0
+    y: 0
+    z: 0
+  B:
+    x: 0
+    y: 0
+    z: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
