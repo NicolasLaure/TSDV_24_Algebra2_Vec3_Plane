@@ -56,6 +56,8 @@ namespace ActividadEjercicios
                     resultVector = B - A;
                     break;
                 case Ejercicios.Tres:
+                    resultVector = A;
+                    resultVector.Scale(B);
                     break;
                 case Ejercicios.Cuatro:
                     break;
