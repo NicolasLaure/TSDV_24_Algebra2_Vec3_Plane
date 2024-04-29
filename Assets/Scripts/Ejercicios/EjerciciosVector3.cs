@@ -50,6 +50,7 @@ namespace ActividadEjercicios
             switch (selectedExercise)
             {
                 case Ejercicios.Uno:
+                    resultVector = A + B;
                     break;
                 case Ejercicios.Dos:
                     break;
@@ -69,6 +70,7 @@ namespace ActividadEjercicios
                 case Ejercicios.Nueve:
                     break;
                 case Ejercicios.Diez:
+                    //UnclampedLerp
                     break;
                 default:
                     break;
