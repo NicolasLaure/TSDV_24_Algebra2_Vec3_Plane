@@ -24,13 +24,9 @@ namespace ActividadEjercicios
         #endregion
         private void Start()
         {
-            //Camera.main.gameObject.AddComponent<VectorHandler>();
-            //Camera.main.gameObject.GetComponent<VectorHandler>().A = A;
-            //Camera.main.gameObject.GetComponent<VectorHandler>().B = B;
-
-            InitializeLine(ref vectorA_LR, "Vector A", Color.white);
-            InitializeLine(ref vectorB_LR, "Vector B", Color.black);
-            InitializeLine(ref vectorResult_LR, "Vector Result", VectorColor);
+            InitializeLine(out vectorA_LR, "Vector A", Color.white);
+            InitializeLine(out vectorB_LR, "Vector B", Color.black);
+            InitializeLine(out vectorResult_LR, "Vector Result", VectorColor);
 
             vectorA_LR.SetPosition(1, A);
             vectorB_LR.SetPosition(1, B);
@@ -41,7 +37,7 @@ namespace ActividadEjercicios
 
         }
 
-        private void InitializeLine(ref LineRenderer line, string name, Color color)
+        private void InitializeLine(out LineRenderer line, string name, Color color)
         {
             GameObject spawnedLine = Instantiate(linePrefab, this.transform);
             spawnedLine.name = name;
