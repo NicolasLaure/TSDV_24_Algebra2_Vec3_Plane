@@ -334,7 +334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764039087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 642327099, guid: ecfa6bb2007b0694bbce809044dab08e, type: 3}
   m_Name: 
@@ -373,13 +373,13 @@ MonoBehaviour:
   selectedExercise: 0
   VectorColor: {r: 1, g: 0, b: 0, a: 1}
   A:
-    x: 0
-    y: 0
-    z: 0
+    x: 3
+    y: 1
+    z: 2
   B:
-    x: 0
-    y: 0
-    z: 0
+    x: 2
+    y: 7
+    z: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
