@@ -17,8 +17,17 @@ namespace ActividadEjercicios
         #endregion
 
         private Vec3 resultVector;
-
         #endregion
+        private void Start()
+        {
+            //Camera.main.gameObject.AddComponent<VectorHandler>();
+            //Camera.main.gameObject.GetComponent<VectorHandler>().A = A;
+            //Camera.main.gameObject.GetComponent<VectorHandler>().B = B;
+        }
 
+        private void Update()
+        {
+
+        }
     }
 }
