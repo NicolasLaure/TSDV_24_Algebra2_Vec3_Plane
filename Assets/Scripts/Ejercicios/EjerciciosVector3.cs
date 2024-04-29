@@ -53,6 +53,7 @@ namespace ActividadEjercicios
                     resultVector = A + B;
                     break;
                 case Ejercicios.Dos:
+                    resultVector = B - A;
                     break;
                 case Ejercicios.Tres:
                     break;
