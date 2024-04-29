@@ -380,6 +380,7 @@ MonoBehaviour:
     x: 2
     y: 7
     z: 3
+  linePrefab: {fileID: 5034411145654722134, guid: 9363a421d80bf2e449505022237344a8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
