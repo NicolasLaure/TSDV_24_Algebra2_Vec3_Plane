@@ -62,10 +62,13 @@ namespace ActividadEjercicios
                 case Ejercicios.Cuatro:
                     break;
                 case Ejercicios.Cinco:
+                    // lerp
                     break;
                 case Ejercicios.Seis:
+                    //B plus A.x
                     break;
                 case Ejercicios.Siete:
+                    //projection
 
                     break;
                 case Ejercicios.Ocho:
