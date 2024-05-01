@@ -19,7 +19,7 @@ namespace ActividadEjercicios
         #endregion
 
         private Ejercicios prevFrameSelectedExercise = Ejercicios.Uno;
-        private Vec3 resultVector = new Vec3(0,0,0);
+        private Vec3 resultVector = new Vec3(0, 0, 0);
         private LineRenderer vectorA_LR;
         private LineRenderer vectorB_LR;
         private LineRenderer vectorResult_LR;
@@ -68,6 +68,7 @@ namespace ActividadEjercicios
                     //B plus A.x
                     break;
                 case Ejercicios.Siete:
+                    resultVector = Vec3.Project(A, B);
                     //projection
 
                     break;
