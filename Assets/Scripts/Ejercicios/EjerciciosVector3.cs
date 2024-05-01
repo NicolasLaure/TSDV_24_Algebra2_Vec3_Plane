@@ -66,7 +66,7 @@ namespace ActividadEjercicios
                     // lerp
                     break;
                 case Ejercicios.Seis:
-                    //B plus A.x
+                    resultVector = Vec3.Max(A, B);
                     break;
                 case Ejercicios.Siete:
                     resultVector = Vec3.Project(A, B);
