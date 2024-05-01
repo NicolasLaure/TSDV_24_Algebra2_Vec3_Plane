@@ -60,6 +60,7 @@ namespace ActividadEjercicios
                     resultVector.Scale(B);
                     break;
                 case Ejercicios.Cuatro:
+                    resultVector = Vec3.Cross(B, A);
                     break;
                 case Ejercicios.Cinco:
                     // lerp
@@ -69,8 +70,6 @@ namespace ActividadEjercicios
                     break;
                 case Ejercicios.Siete:
                     resultVector = Vec3.Project(A, B);
-                    //projection
-
                     break;
                 case Ejercicios.Ocho:
                     break;
