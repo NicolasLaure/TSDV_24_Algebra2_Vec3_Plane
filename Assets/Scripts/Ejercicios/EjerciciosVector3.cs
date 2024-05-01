@@ -117,7 +117,7 @@ namespace ActividadEjercicios
                 float startTime = Time.time;
                 float timer = 0;
                 float duration = 1;
-                while (timer < duration)
+                while (timer < duration && selectedExercise == Ejercicios.Cinco)
                 {
                     timer = Time.time - startTime;
                     resultVector = Vec3.Lerp(A, B, timer / duration);
@@ -134,7 +134,7 @@ namespace ActividadEjercicios
                 float timer = 0;
                 float durationZeroToOne = 1;
                 float loopDuration = 10;
-                while (timer < loopDuration)
+                while (timer < loopDuration && selectedExercise == Ejercicios.Diez)
                 {
                     timer = Time.time - startTime;
                     resultVector = Vec3.LerpUnclamped(B, A, timer / durationZeroToOne);
