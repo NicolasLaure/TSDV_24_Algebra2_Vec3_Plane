@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 642327099, guid: ecfa6bb2007b0694bbce809044dab08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ejercicio: 7
+  ejercicio: 0
   vectorColor: {r: 1, g: 0, b: 0, a: 1}
   a: {x: 3, y: -3, z: 2}
   b: {x: 2, y: 7, z: 3}
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c7c9f6796eceb4fa7a824820f28e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedExercise: 7
+  selectedExercise: 0
   VectorColor: {r: 1, g: 0, b: 0, a: 1}
   A:
     x: 3
