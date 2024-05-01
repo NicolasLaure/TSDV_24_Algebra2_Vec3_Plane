@@ -240,12 +240,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629572455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c7c9f6796eceb4fa7a824820f28e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedExercise: 0
+  selectedExercise: 5
   VectorColor: {r: 1, g: 0, b: 0, a: 1}
   A:
     x: 1
@@ -263,12 +263,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629572455}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 642327099, guid: ecfa6bb2007b0694bbce809044dab08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ejercicio: 0
+  ejercicio: 7
   vectorColor: {r: 1, g: 0, b: 0, a: 1}
   a: {x: 1, y: 4, z: 6}
   b: {x: 4, y: 2, z: 5}
@@ -406,12 +406,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764039087}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 642327099, guid: ecfa6bb2007b0694bbce809044dab08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ejercicio: 0
+  ejercicio: 9
   vectorColor: {r: 1, g: 0, b: 0, a: 1}
   a: {x: 3, y: 1, z: 2}
   b: {x: 2, y: 7, z: 3}
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c7c9f6796eceb4fa7a824820f28e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedExercise: 0
+  selectedExercise: 9
   VectorColor: {r: 1, g: 0, b: 0, a: 1}
   A:
     x: 3

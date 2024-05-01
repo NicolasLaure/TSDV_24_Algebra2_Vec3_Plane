@@ -63,7 +63,7 @@ namespace ActividadEjercicios
                     resultVector = Vec3.Cross(B, A);
                     break;
                 case Ejercicios.Cinco:
-                    // lerp
+                    StartCoroutine(EjercicioCinco());
                     break;
                 case Ejercicios.Seis:
                     resultVector = Vec3.Max(A, B);
@@ -109,5 +109,22 @@ namespace ActividadEjercicios
             tmpText.color = line.startColor;
         }
         #endregion
+
+        private IEnumerator EjercicioCinco()
+        {
+            while (selectedExercise == Ejercicios.Cinco)
+            {
+                float startTime = Time.time;
+                float timer = 0;
+                float duration = 1;
+                while (timer < duration)
+                {
+                    timer = Time.time - startTime;
+                    resultVector = Vec3.Lerp(A, B, timer / duration);
+                    SetVector(resultVector, ref vectorResult_LR);
+                    yield return null;
+                }
+            }
+        }
     }
 }
