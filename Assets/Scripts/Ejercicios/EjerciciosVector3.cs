@@ -72,11 +72,12 @@ namespace ActividadEjercicios
                     resultVector = Vec3.Project(A, B);
                     break;
                 case Ejercicios.Ocho:
-                    //resultVector = Vec3.Lerp(A,B, 0.5f);
+                    resultVector = Vec3.Lerp(A, B, 0.5f);
+                    resultVector.Normalize();
+                    resultVector *= Vec3.Distance(A,B);
                     break;
                 case Ejercicios.Nueve:
                     resultVector = Vec3.Reflect(A, new Vec3(B.normalized));
-                    //resultVector.Normalize();
                     break;
                 case Ejercicios.Diez:
                     StartCoroutine(EjercicioDiez());
