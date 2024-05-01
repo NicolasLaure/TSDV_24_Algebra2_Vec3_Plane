@@ -76,7 +76,7 @@ namespace ActividadEjercicios
                 case Ejercicios.Nueve:
                     break;
                 case Ejercicios.Diez:
-                    //UnclampedLerp
+                    StartCoroutine(EjercicioDiez());
                     break;
                 default:
                     break;
@@ -121,6 +121,23 @@ namespace ActividadEjercicios
                 {
                     timer = Time.time - startTime;
                     resultVector = Vec3.Lerp(A, B, timer / duration);
+                    SetVector(resultVector, ref vectorResult_LR);
+                    yield return null;
+                }
+            }
+        }
+        private IEnumerator EjercicioDiez()
+        {
+            while (selectedExercise == Ejercicios.Diez)
+            {
+                float startTime = Time.time;
+                float timer = 0;
+                float durationZeroToOne = 1;
+                float loopDuration = 10;
+                while (timer < loopDuration)
+                {
+                    timer = Time.time - startTime;
+                    resultVector = Vec3.LerpUnclamped(B, A, timer / durationZeroToOne);
                     SetVector(resultVector, ref vectorResult_LR);
                     yield return null;
                 }
