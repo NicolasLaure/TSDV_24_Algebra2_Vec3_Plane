@@ -18,8 +18,7 @@ namespace CustomMath
         }
         public Self_Plane(Vec3 inNormal, float d)
         {
-            normal = inNormal;
-            distance = d;
+            throw new NotImplementedException();
         }
         public Self_Plane(Vec3 a, Vec3 b, Vec3 c)
         {
