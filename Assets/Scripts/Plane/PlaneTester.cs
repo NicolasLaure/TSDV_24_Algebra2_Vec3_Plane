@@ -11,17 +11,20 @@ public class PlaneTester : MonoBehaviour
     [SerializeField] private Vec3 position = new Vec3(0, 0, 0);
 
     [SerializeField] private GameObject planePrefab;
+    [SerializeField] private Material planeMat;
+    [SerializeField] private Material selfPlaneMat;
     private GameObject planeObject;
     private void Start()
     {
 
         plane = new Plane(normal, position);
         planeObject = Instantiate(planePrefab, transform);
+        planeObject.GetComponent<MeshRenderer>().material = planeMat;
         //selfPlane = new Self_Plane(normal, position);
     }
     private void Update()
     {
-        plane.SetNormalAndPosition(normal,position);
+        plane.SetNormalAndPosition(normal, position);
         planeObject.transform.up = plane.normal;
     }
     private void OnDrawGizmos()

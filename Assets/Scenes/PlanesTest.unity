@@ -176,6 +176,8 @@ MonoBehaviour:
     y: 0
     z: 0
   planePrefab: {fileID: 5433067007073110783, guid: 47f921c3954f06b4c9b6c49166fbbcba, type: 3}
+  planeMat: {fileID: 2100000, guid: 6f2f9fe3d6e6cb1468f6fbcefd7ce657, type: 2}
+  selfPlaneMat: {fileID: 2100000, guid: 4de10bea74a2dbe4dbd09adc020dd0fc, type: 2}
 --- !u!1 &603428066
 GameObject:
   m_ObjectHideFlags: 0
