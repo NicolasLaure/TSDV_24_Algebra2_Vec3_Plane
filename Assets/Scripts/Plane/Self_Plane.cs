@@ -14,7 +14,7 @@ namespace CustomMath
 
         public Vec3 Normal { get { return normal.normalizedVec3; } }
         public float Distance { get { return distance; } }
-        public Self_Plane flipped { get { throw new NotImplementedException(); } }
+        public Self_Plane flipped { get { return new Self_Plane(normal * -1, -distance); } }
         #endregion
 
         #region Constructors
@@ -43,7 +43,8 @@ namespace CustomMath
         }
         public void Flip()
         {
-            throw new NotImplementedException();
+            normal *= -1;
+            distance *= -1;
         }
         public float GetDistanceToPoint(Vec3 point)
         {

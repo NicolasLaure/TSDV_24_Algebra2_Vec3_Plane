@@ -20,8 +20,8 @@ public class PlaneTester : MonoBehaviour
     private GameObject selfPlaneObject;
     private void Start()
     {
-        plane = new Plane(normal, distance);
-        selfPlane = new Self_Plane(normal, distance);
+        plane = new Plane(normal, position);
+        selfPlane = new Self_Plane(normal, position);
 
         Debug.Log($"Unity Plane distance is:{plane.distance}");
         Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
@@ -33,11 +33,13 @@ public class PlaneTester : MonoBehaviour
     }
     private void Update()
     {
+        plane.Flip();
         //plane.SetNormalAndPosition(normal, position);
         planeObject.transform.up = plane.normal;
         planeObject.transform.position = plane.distance * plane.normal;
 
         //selfPlane.SetNormalAndPosition(normal, position);
+        selfPlane.Flip();
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
     }
