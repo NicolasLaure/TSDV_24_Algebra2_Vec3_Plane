@@ -8,13 +8,16 @@ namespace CustomMath
 
     public struct Self_Plane
     {
-        public Vec3 normal;
-        public float distance;
+        private Vec3 normal;
+        private float distance;
+        public Vec3 Normal { get { return normal.normalizedVec3; } }
+        public float Distance { get { return distance; } }
         public Self_Plane flipped { get { throw new NotImplementedException(); } }
 
         public Self_Plane(Vec3 inNormal, Vec3 inPoint)
         {
-            throw new NotImplementedException();
+            normal = inNormal;
+            distance = Vec3.Dot(inNormal, inPoint) / -normal.magnitude;
         }
         public Self_Plane(Vec3 inNormal, float d)
         {
@@ -54,7 +57,8 @@ namespace CustomMath
         }
         public void SetNormalAndPosition(Vec3 inNormal, Vec3 inPoint)
         {
-            throw new NotImplementedException();
+            normal = inNormal;
+            distance = Vec3.Dot(inNormal, inPoint) / -normal.magnitude;
         }
         public void Translate(Vec3 translation)
         {

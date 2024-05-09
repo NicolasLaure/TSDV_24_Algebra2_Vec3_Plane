@@ -168,12 +168,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normal:
-    x: 0
+    x: -1
     y: 1
     z: 0
   position:
-    x: 0
-    y: 0
+    x: 7
+    y: 10
     z: 0
   planePrefab: {fileID: 5433067007073110783, guid: 47f921c3954f06b4c9b6c49166fbbcba, type: 3}
   planeMat: {fileID: 2100000, guid: 6f2f9fe3d6e6cb1468f6fbcefd7ce657, type: 2}
