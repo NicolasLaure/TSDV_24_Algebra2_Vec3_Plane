@@ -8,12 +8,16 @@ namespace CustomMath
 
     public struct Self_Plane
     {
+        #region Variables
         private Vec3 normal;
         private float distance;
+
         public Vec3 Normal { get { return normal.normalizedVec3; } }
         public float Distance { get { return distance; } }
         public Self_Plane flipped { get { throw new NotImplementedException(); } }
+        #endregion
 
+        #region Constructors
         public Self_Plane(Vec3 inNormal, Vec3 inPoint)
         {
             normal = inNormal;
@@ -21,12 +25,14 @@ namespace CustomMath
         }
         public Self_Plane(Vec3 inNormal, float d)
         {
-            throw new NotImplementedException();
+            normal = inNormal;
+            distance = d;
         }
         public Self_Plane(Vec3 a, Vec3 b, Vec3 c)
         {
             throw new NotImplementedException();
         }
+        #endregion
         public static Self_Plane Translate(Self_Plane plane, Vec3 translation)
         {
             throw new NotImplementedException();

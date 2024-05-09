@@ -9,7 +9,10 @@ public class PlaneTester : MonoBehaviour
 
     [SerializeField] private Vec3 normal = new Vec3(0, 1, 0);
     [SerializeField] private Vec3 position = new Vec3(0, 1, 0);
+    [Space]
+    [SerializeField] private float distance = 0;
 
+    [Header("Visuals")]
     [SerializeField] private GameObject planePrefab;
     [SerializeField] private Material planeMat;
     [SerializeField] private Material selfPlaneMat;
@@ -17,8 +20,8 @@ public class PlaneTester : MonoBehaviour
     private GameObject selfPlaneObject;
     private void Start()
     {
-        plane = new Plane(normal, position);
-        selfPlane = new Self_Plane(normal, position);
+        plane = new Plane(normal, distance);
+        selfPlane = new Self_Plane(normal, distance);
 
         Debug.Log($"Unity Plane distance is:{plane.distance}");
         Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
@@ -30,11 +33,11 @@ public class PlaneTester : MonoBehaviour
     }
     private void Update()
     {
-        plane.SetNormalAndPosition(normal, position);
+        //plane.SetNormalAndPosition(normal, position);
         planeObject.transform.up = plane.normal;
         planeObject.transform.position = plane.distance * plane.normal;
 
-        selfPlane.SetNormalAndPosition(normal, position);
+        //selfPlane.SetNormalAndPosition(normal, position);
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
     }
