@@ -44,7 +44,10 @@ namespace CustomMath
         }
         public Vec3 ClosestPointOnPlane(Vec3 point)
         {
-            throw new NotImplementedException();
+            Vec3 normalizedNormal = normal.normalizedVec3;
+
+            float t = GetDistanceToPoint(point) / -Vec3.Dot(normalizedNormal, normalizedNormal);
+            return new Vec3(normalizedNormal.x * t + point.x, normalizedNormal.y * t + point.y, normalizedNormal.z * t + point.z);
         }
         public void Flip()
         {

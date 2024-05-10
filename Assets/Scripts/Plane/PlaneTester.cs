@@ -26,12 +26,16 @@ public class PlaneTester : MonoBehaviour
     [SerializeField] private Material planeMat;
     [SerializeField] private Material selfPlaneMat;
     [SerializeField] private Transform pointVisual;
+    [SerializeField] private Transform closestPlanePointVisual;
+    [SerializeField] private Transform closestSelfPlanePointVisual;
     private GameObject planeObject;
     private GameObject selfPlaneObject;
     private void Start()
     {
-        plane = new Plane(a, b, c);
-        selfPlane = new Self_Plane(a, b, c);
+        //plane = new Plane(a, b, c);
+        //selfPlane = new Self_Plane(a, b, c);
+        plane = new Plane(normal, position);
+        selfPlane = new Self_Plane(normal, position);
 
         Debug.Log($"Unity Plane distance is:{plane.distance}");
         Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
@@ -43,15 +47,19 @@ public class PlaneTester : MonoBehaviour
     }
     private void Update()
     {
-        plane = Plane.Translate(plane, translation);
+        plane.SetNormalAndPosition(normal,position);
+        //plane = Plane.Translate(plane, translation);
         planeObject.transform.up = plane.normal;
         planeObject.transform.position = plane.distance * plane.normal;
 
-        selfPlane = Self_Plane.Translate(selfPlane, translation);
+        //selfPlane = Self_Plane.Translate(selfPlane, translation);
+        selfPlane.SetNormalAndPosition(normal,position);
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
-        //Debug.Log($"Unity Plane distance is:{plane.distance}");
-        //Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
+
+        closestPlanePointVisual.position = plane.ClosestPointOnPlane(point);
+        closestSelfPlanePointVisual.position = selfPlane.ClosestPointOnPlane(point);
+
 
         pointVisual.position = point;
         Debug.Log($"Unity distance to point: {plane.GetDistanceToPoint(point)}");
@@ -63,7 +71,7 @@ public class PlaneTester : MonoBehaviour
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(plane.normal * (plane.distance + 0.1f), (plane.normal * (plane.distance + 0.1f)) + plane.normal);
-            Gizmos.color = Color.red;
+            Gizmos.color = new Color(1, 0, 0, 0.5f);
             Gizmos.DrawLine(selfPlane.Normal * selfPlane.Distance, (selfPlane.Normal * selfPlane.Distance) + selfPlane.Normal);
         }
     }
