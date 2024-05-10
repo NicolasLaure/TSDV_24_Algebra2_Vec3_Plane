@@ -18,11 +18,14 @@ public class PlaneTester : MonoBehaviour
     [SerializeField] private Vec3 c;
     [Space]
     [SerializeField] private Vec3 translation;
+    [SerializeField] private Vec3 point;
+
 
     [Header("Visuals")]
     [SerializeField] private GameObject planePrefab;
     [SerializeField] private Material planeMat;
     [SerializeField] private Material selfPlaneMat;
+    [SerializeField] private Transform pointVisual;
     private GameObject planeObject;
     private GameObject selfPlaneObject;
     private void Start()
@@ -47,8 +50,12 @@ public class PlaneTester : MonoBehaviour
         selfPlane = Self_Plane.Translate(selfPlane, translation);
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
-        Debug.Log($"Unity Plane distance is:{plane.distance}");
-        Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
+        //Debug.Log($"Unity Plane distance is:{plane.distance}");
+        //Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
+
+        pointVisual.position = point;
+        Debug.Log($"Unity distance to point: {plane.GetDistanceToPoint(point)}");
+        Debug.Log($"Self plane distance to point: {selfPlane.GetDistanceToPoint(point)}");
     }
     private void OnDrawGizmos()
     {

@@ -53,7 +53,7 @@ namespace CustomMath
         }
         public float GetDistanceToPoint(Vec3 point)
         {
-            throw new NotImplementedException();
+            return (Vec3.Dot(normal, point) + (distance * normal.magnitude)) / normal.magnitude;
         }
         public bool GetSide(Vec3 point)
         {
