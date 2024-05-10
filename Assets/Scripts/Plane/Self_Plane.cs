@@ -39,7 +39,8 @@ namespace CustomMath
         #region Functions
         public static Self_Plane Translate(Self_Plane plane, Vec3 translation)
         {
-            throw new NotImplementedException();
+            float newPlaneDistance = plane.distance + Vec3.Dot(plane.normal, translation) / plane.normal.magnitude;
+            return new Self_Plane(plane.normal, newPlaneDistance);
         }
         public Vec3 ClosestPointOnPlane(Vec3 point)
         {
@@ -75,7 +76,7 @@ namespace CustomMath
         }
         public void Translate(Vec3 translation)
         {
-            throw new NotImplementedException();
+            distance += Vec3.Dot(normal, translation) / normal.magnitude;
         }
         #endregion
     }

@@ -16,6 +16,8 @@ public class PlaneTester : MonoBehaviour
     [SerializeField] private Vec3 a;
     [SerializeField] private Vec3 b;
     [SerializeField] private Vec3 c;
+    [Space]
+    [SerializeField] private Vec3 translation;
 
     [Header("Visuals")]
     [SerializeField] private GameObject planePrefab;
@@ -38,11 +40,11 @@ public class PlaneTester : MonoBehaviour
     }
     private void Update()
     {
-        plane.Set3Points(a, b, c);
+        plane = Plane.Translate(plane, translation);
         planeObject.transform.up = plane.normal;
         planeObject.transform.position = plane.distance * plane.normal;
 
-        selfPlane.Set3Points(a, b, c);
+        selfPlane = Self_Plane.Translate(selfPlane, translation);
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
         Debug.Log($"Unity Plane distance is:{plane.distance}");
