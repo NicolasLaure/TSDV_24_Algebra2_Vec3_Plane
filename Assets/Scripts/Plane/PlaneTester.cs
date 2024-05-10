@@ -12,6 +12,11 @@ public class PlaneTester : MonoBehaviour
     [Space]
     [SerializeField] private float distance = 0;
 
+    [Header("Set with three points")]
+    [SerializeField] private Vec3 a;
+    [SerializeField] private Vec3 b;
+    [SerializeField] private Vec3 c;
+
     [Header("Visuals")]
     [SerializeField] private GameObject planePrefab;
     [SerializeField] private Material planeMat;
@@ -20,8 +25,8 @@ public class PlaneTester : MonoBehaviour
     private GameObject selfPlaneObject;
     private void Start()
     {
-        plane = new Plane(normal, position);
-        selfPlane = new Self_Plane(normal, position);
+        plane = new Plane(a, b, c);
+        selfPlane = new Self_Plane(a, b, c);
 
         Debug.Log($"Unity Plane distance is:{plane.distance}");
         Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
@@ -33,22 +38,24 @@ public class PlaneTester : MonoBehaviour
     }
     private void Update()
     {
-        plane.Flip();
-        //plane.SetNormalAndPosition(normal, position);
+        plane.Set3Points(a, b, c);
         planeObject.transform.up = plane.normal;
         planeObject.transform.position = plane.distance * plane.normal;
 
-        //selfPlane.SetNormalAndPosition(normal, position);
-        selfPlane.Flip();
+        selfPlane.Set3Points(a, b, c);
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
+        Debug.Log($"Unity Plane distance is:{plane.distance}");
+        Debug.Log($"Self Plane distance is:{selfPlane.Distance}");
     }
     private void OnDrawGizmos()
     {
         if (Application.isPlaying)
         {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(plane.normal * (plane.distance + 0.1f), (plane.normal * (plane.distance + 0.1f)) + plane.normal);
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(plane.normal * plane.distance, (plane.normal * plane.distance) + plane.normal);
+            Gizmos.DrawLine(selfPlane.Normal * selfPlane.Distance, (selfPlane.Normal * selfPlane.Distance) + selfPlane.Normal);
         }
     }
 }

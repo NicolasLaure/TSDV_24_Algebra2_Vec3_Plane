@@ -30,9 +30,13 @@ namespace CustomMath
         }
         public Self_Plane(Vec3 a, Vec3 b, Vec3 c)
         {
-            throw new NotImplementedException();
+            //https://math.stackexchange.com/questions/1034568/find-the-plane-a-triangle-lies-on
+            normal = Vec3.Cross(b - a, c - a);
+            Vec3 triangleCenter = (a + b + c) / 3;
+            distance = Vec3.Dot(normal, triangleCenter) / -normal.magnitude;
         }
         #endregion
+        #region Functions
         public static Self_Plane Translate(Self_Plane plane, Vec3 translation)
         {
             throw new NotImplementedException();
@@ -60,7 +64,9 @@ namespace CustomMath
         }
         public void Set3Points(Vec3 a, Vec3 b, Vec3 c)
         {
-            throw new NotImplementedException();
+            normal = Vec3.Cross(b - a, c - a);
+            Vec3 triangleCenter = (a + b + c) / 3;
+            distance = Vec3.Dot(normal, triangleCenter) / -normal.magnitude;
         }
         public void SetNormalAndPosition(Vec3 inNormal, Vec3 inPoint)
         {
@@ -71,5 +77,6 @@ namespace CustomMath
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }
