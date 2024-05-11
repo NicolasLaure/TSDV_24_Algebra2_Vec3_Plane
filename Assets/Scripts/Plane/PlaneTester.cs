@@ -18,14 +18,16 @@ public class PlaneTester : MonoBehaviour
     [SerializeField] private Vec3 c;
     [Space]
     [SerializeField] private Vec3 translation;
-    [SerializeField] private Vec3 point;
+    [SerializeField] private Vec3 point0;
+    [SerializeField] private Vec3 point1;
 
 
     [Header("Visuals")]
     [SerializeField] private GameObject planePrefab;
     [SerializeField] private Material planeMat;
     [SerializeField] private Material selfPlaneMat;
-    [SerializeField] private Transform pointVisual;
+    [SerializeField] private Transform pointVisual0;
+    [SerializeField] private Transform pointVisual1;
     [SerializeField] private Transform closestPlanePointVisual;
     [SerializeField] private Transform closestSelfPlanePointVisual;
     private GameObject planeObject;
@@ -57,13 +59,19 @@ public class PlaneTester : MonoBehaviour
         selfPlaneObject.transform.up = selfPlane.Normal;
         selfPlaneObject.transform.position = selfPlane.Distance * selfPlane.Normal;
 
-        closestPlanePointVisual.position = plane.ClosestPointOnPlane(point);
-        closestSelfPlanePointVisual.position = selfPlane.ClosestPointOnPlane(point);
+        closestPlanePointVisual.position = plane.ClosestPointOnPlane(point0);
+        closestSelfPlanePointVisual.position = selfPlane.ClosestPointOnPlane(point0);
 
 
-        pointVisual.position = point;
-        Debug.Log($"Unity distance to point: {plane.GetDistanceToPoint(point)}");
-        Debug.Log($"Self plane distance to point: {selfPlane.GetDistanceToPoint(point)}");
+        pointVisual0.position = point0;
+        pointVisual1.position = point1;
+        //Debug.Log($"UnityPlane point is on positive side = {plane.GetSide(point0)}");
+        //Debug.Log($"SelfPlane point is on positive side = {selfPlane.GetSide(point0)}");
+        Debug.Log($"Unity are two points on same side {plane.SameSide(point0,point1)}");
+        Debug.Log($"SelfPlane are two points on same side {selfPlane.SameSide(point0,point1)}");
+
+        //Debug.Log($"Unity distance to point: {plane.GetDistanceToPoint(point)}");
+        //Debug.Log($"Self plane distance to point: {selfPlane.GetDistanceToPoint(point)}");
     }
     private void OnDrawGizmos()
     {

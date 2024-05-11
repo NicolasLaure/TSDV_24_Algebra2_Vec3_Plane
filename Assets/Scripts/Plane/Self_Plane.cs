@@ -60,11 +60,11 @@ namespace CustomMath
         }
         public bool GetSide(Vec3 point)
         {
-            throw new NotImplementedException();
+            return Vec3.Dot(normal, (point - (normal * distance))) > 0;
         }
         public bool SameSide(Vec3 inPt0, Vec3 inPt1)
         {
-            throw new NotImplementedException();
+            return GetSide(inPt0) == GetSide(inPt1);
         }
         public void Set3Points(Vec3 a, Vec3 b, Vec3 c)
         {
