@@ -5,7 +5,6 @@ using System;
 
 namespace CustomMath
 {
-
     public struct Self_Plane
     {
         #region Variables
@@ -16,7 +15,6 @@ namespace CustomMath
         public float Distance { get { return distance; } }
         public Self_Plane flipped { get { return new Self_Plane(normal * -1, -distance); } }
         #endregion
-
         #region Constructors
         public Self_Plane(Vec3 inNormal, Vec3 inPoint)
         {
