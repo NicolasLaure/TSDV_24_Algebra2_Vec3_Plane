@@ -132,11 +132,12 @@ namespace CustomMath
         }
         public static float Angle(Vec3 from, Vec3 to)
         {
+            // by definition dot product a.b = |a||b| cos(O) disclaimer: O represents the symbol theta NOT A ZERO
+            // divide each side by |a||b| and cos = dot / |a||b| 
             return Mathf.Acos(Vec3.Dot(from, to) / (from.magnitude * to.magnitude)) * Mathf.Rad2Deg;
         }
         public static Vec3 ClampMagnitude(Vec3 vector, float maxLength)
         {
-
             if (vector.magnitude > maxLength)
             {
                 vector.Normalize();
